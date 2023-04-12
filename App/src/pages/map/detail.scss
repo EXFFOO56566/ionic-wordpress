@@ -1,0 +1,43 @@
+.map-detail-page {
+    #detail-map {
+        width:100%;
+        height:200px;
+    }
+    h1,
+    h2,
+    h3 {
+        color: map-get($colors, primary);
+        font-weight: bold;
+    }
+    p {
+        margin-bottom: 15px;
+        white-space: normal;
+    }
+    div p:last-child {
+        margin-bottom: 0;
+    }
+    ion-thumbnail {
+        min-height: 5rem;
+    }
+    img,
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+    // Wordpress Styles
+    .wp-caption {
+        background: transparent;
+        line-height: 18px;
+        margin-bottom: 5px;
+        padding: 0;
+        text-align: center;
+        width: 100% !important;
+        text-align: center;
+        p.wp-caption-text {
+            text-align: center;
+            color: #666;
+            font-size: 12px !important;
+            margin: 5px;
+        }
+    }
+}

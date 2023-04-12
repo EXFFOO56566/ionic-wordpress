@@ -1,0 +1,37 @@
+.map-categories-page {
+    path {
+        fill: map-get($colors, primary);
+    }
+    p {
+        white-space: normal;
+    }
+    h2 {
+        color: map-get($colors, primary);
+        font-weight: bold;
+    }
+    ion-avatar {
+        button {
+            padding: 0;
+        }
+        svg {
+            margin-left:5px;
+            width:30px;
+            float:left;
+        }
+    }
+    ion-list {
+        ion-item.category {
+            ion-icon {
+                min-width: 5rem !important;
+                min-height: 5rem;
+                img {
+                    max-width: 5rem !important;
+                    max-height: 5rem;
+                }
+            }
+            .item-inner {
+                margin-left: 10px;
+            }
+        }
+    }
+}

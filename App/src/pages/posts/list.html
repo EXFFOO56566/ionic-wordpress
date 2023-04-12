@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>News</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <button ion-item *ngFor="let post of posts" (click)="onDetail($event, post)" class="post-item">
+            <ion-thumbnail item-left>
+                <img [src]="post.featured_image?.media_details?.sizes?.thumbnail?.source_url" [hidden]="post.featured_image == null"/>
+                <img
+                    src="data:image/png;base64,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"
+                    [hidden]="post.featured_image != null"/>
+            </ion-thumbnail>
+            <p class="date">
+                {{post.date  | date: 'MM.dd.y'}}
+            </p>
+            <h2 [innerHTML]="post.title.rendered"></h2>
+            <h2 [innerHTML]="post.excerpt.rendered"></h2>
+        </button>
+    </ion-list>
+</ion-content>

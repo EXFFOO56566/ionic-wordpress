@@ -1,0 +1,20 @@
+.about-page {
+    h1,
+    h2,
+    h3 {
+        color: map-get($colors, primary);
+        font-weight: bold;
+    }
+    p {
+        margin-bottom: 15px;
+        white-space: normal;
+    }
+
+    img,
+    video {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+    }
+
+}

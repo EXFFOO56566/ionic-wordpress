@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            <span [innerHTML]="post.title.rendered"></span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content >
+    <ion-card class="post-detail">
+        <img [src]="post.featured_image?.source_url" [hidden]="post.featured_image == null">
+
+        <ion-item>
+            <h2 [innerHTML]="post.title.rendered"></h2>
+            <p>{{post.date | date: 'MM.dd.y'}}</p>
+            <hr/>
+        </ion-item>
+
+        <ion-card-content class="post-content">
+            <wordpress-content [content]="post.content.rendered"></wordpress-content>
+        </ion-card-content>
+
+    </ion-card>
+
+</ion-content>

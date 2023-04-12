@@ -1,0 +1,10 @@
+.post-item {
+    ion-thumbnail {
+        min-height: 5rem;
+    }
+    h2 {
+        color: map-get($colors, primary);
+        font-weight: bold;
+        white-space: normal;
+    }
+}

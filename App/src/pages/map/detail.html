@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button icon-only ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            <span [innerHTML]="location.title.rendered"></span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="map-detail-page">
+    <ion-card >
+        <img [src]="location.featured_image?.source_url" [hidden]="location.featured_image == null">
+        <div id="detail-map" [hidden]="location.featured_image != null"></div>
+        <ion-item>
+            <h2 [innerHTML]="location.title.rendered"></h2>
+            <p class="address" [innerHTML]="location.location.formatted_address"></p>
+
+            <hr/>
+        </ion-item>
+
+        <ion-card-content>
+            <div [innerHTML]="location.content.rendered"></div>
+        </ion-card-content>
+        <ion-row>
+            <ion-col>
+                <button ion-button icon-left color="primary" outline full (click)="onNavigate()">
+                    <ion-icon name="navigate"></ion-icon>
+                    <div>Navigate</div>
+                </button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col [hidden]="location.location.website == ''">
+                <button ion-button icon-left color="primary" outline full (click)="onWebsite()">
+                    <ion-icon name="globe"></ion-icon>
+                    <div>Website</div>
+                </button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col [hidden]="location.location.email == ''">
+                <button ion-button icon-left color="primary" outline full (click)="onMail()">
+                    <ion-icon name="send"></ion-icon>
+                    <div>{{location.location.email}}</div>
+                </button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col [hidden]="location.location.phone == ''">
+                <button ion-button icon-left color="primary" outline full (click)="onPhone()">
+                    <ion-icon name="call"></ion-icon>
+                    <div>{{location.location.phone}}</div>
+                </button>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+
+</ion-content>

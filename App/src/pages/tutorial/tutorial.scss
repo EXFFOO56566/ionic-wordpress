@@ -1,0 +1,72 @@
+.tutorial-page {
+    ion-slides {
+        background: linear-gradient(to bottom, map-get($colors, primary) 0%, darken(map-get($colors, primary), 15%) 100%);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+    }
+    ion-slide {
+        ion-card {
+            margin: 80px 40px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+            border-radius: 6px;
+            position: relative;
+        }
+        ion-card-title {
+            color: map-get($colors, primary);
+            font-weight: bold;
+        }
+        button {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        opacity: 0.5;
+    }
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+    }
+    ion-icon {
+        background: map-get($colors, primary);
+        color: #fff;
+        border-radius: 3rem;
+        min-width: 6rem;
+        min-height: 6rem;
+        vertical-align: middle;
+        padding-top: 0;
+        text-align: center;
+        font-size: 4.5rem;
+        margin-right: 10px;
+    }
+    ion-label {
+        white-space: normal;
+        color: map-get($colors, dark);
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+    }
+    .slide-zoom {
+        height: 100%;
+        display: flex;
+        > div {
+            align-self: flex-end;
+            margin-bottom: 20px;
+        }
+        .slide-title {
+            margin-top: 2.8rem;
+        }
+        .slide-image {
+            max-height: 50%;
+            max-width: 60%;
+            margin: 36px 0;
+        }
+    }
+    b {
+        font-weight: 500;
+    }
+    .swiper-pagination-bullet {
+        background: #fff;
+    }
+}

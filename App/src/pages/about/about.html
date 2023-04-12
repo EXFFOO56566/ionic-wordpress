@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title >About</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <div class="logo">
+            <img src="assets/img/logo.png">
+        </div>
+
+        <ion-card-content class="post-content">
+            <wordpress-content [content]="page?.content?.rendered" (link)="onInteralLink($event)"></wordpress-content>
+        </ion-card-content>
+
+    </ion-card>
+
+</ion-content>

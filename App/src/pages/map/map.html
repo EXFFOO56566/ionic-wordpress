@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            <span [innerHTML]="category.name"></span>
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only [hidden]="mode == 'map'" (click)="onChangeMode('map')">
+                <ion-icon name="globe"></ion-icon>
+            </button>
+            <button ion-button icon-only [hidden]="mode == 'list'" (click)="onChangeMode('list')">
+                <ion-icon name="list"></ion-icon>
+            </button>
+        </ion-buttons >
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="map-page">
+    <ion-list [hidden]="mode == 'map'">
+        <button ion-item *ngFor="let location of locations" (click)="onDetail(location)">
+            <h2 [innerHTML]="location.title.rendered"></h2>
+            <p class="excerpt" [innerHTML]="location.excerpt.rendered"></p>
+            <p class="address" [innerHTML]="location.location.formatted_address"></p>
+            <ion-badge item-right>{{location.distance | number:'1.0-1'}} km</ion-badge>
+        </button>
+    </ion-list>
+    <div id="map" [hidden]="mode == 'list'"></div>
+</ion-content>

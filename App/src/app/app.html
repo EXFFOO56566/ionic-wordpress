@@ -1,0 +1,53 @@
+<ion-menu [content]="content" (ionOpen)="onMenuOpened()">
+
+    <ion-toolbar color="primary">
+        <ion-title>Menü</ion-title>
+    </ion-toolbar>
+
+    <ion-content>
+        <ion-list>
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                <ion-icon name="{{p.icon}}"></ion-icon>
+                {{p.title}}
+            </button>
+            <ion-list-header>
+                Other
+            </ion-list-header>
+            <div class="secondary">
+                <button menuClose ion-item (click)="onShare()">
+                    <ion-icon name="share"></ion-icon>
+                    Share
+                </button>
+                <button menuClose ion-item (click)="onRate()">
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    Rate
+                </button>
+                <button menuClose ion-item (click)="onFacebook()">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                    Facebook
+                </button>
+                <button menuClose ion-item (click)="onWebsite()">
+                    <ion-icon name="globe"></ion-icon>
+                    Website
+                </button>
+                <button menuClose ion-item (click)="onTutorial()">
+                    <ion-icon name="bulb"></ion-icon>
+                    Introduction
+                </button>
+                <button menuClose ion-item (click)="onAbout()">
+                    <ion-icon name="information-circle"></ion-icon>
+                    About
+                </button>
+            </div>
+            <ion-item>
+                <p>
+                    Version:
+                    {{version}}
+                </p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav id="nav" [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Locations</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="map-categories-page">
+
+    <ion-list>
+        <ion-item [hidden]="tutorial == true" (click)="onMenu()" tappable>
+            <ion-avatar item-left>
+                <button ion-button clear icon-only>
+                    <ion-icon name="menu"></ion-icon>
+                </button>
+
+                <svg version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 114 117" xml:space="preserve">
+
+                    <path class="st0" d="M21.8,34c2.8,0,5.1,2.3,5.1,5.1v0.7c0,2.8-2.3,5.1-5.1,5.1c-2.8,0-5.1-2.3-5.1-5.1V39
+                        C16.7,36.2,19,34,21.8,34z"/>
+                    <path class="st0" d="M25.8,54.4c2,0,3.8,1.2,4.7,3.1l0.2,0.5c1.1,2.6,0,5.6-2.6,6.7c-2.6,1.1-5.6,0-6.7-2.6l-0.3-0.7
+                        c-1.1-2.6,0.1-5.6,2.7-6.7C24.5,54.5,25.1,54.4,25.8,54.4z"/>
+                    <path class="st0" d="M37.4,71.8c1.3,0,2.7,0.5,3.7,1.6l0.5,0.5c1.9,2,1.9,5.2-0.2,7.2c-2,1.9-5.2,1.9-7.2-0.1l-0.5-0.5
+                        c-1.9-2-1.8-5.3,0.2-7.2C34.9,72.3,36.1,71.8,37.4,71.8z"/>
+                    <path class="st0" d="M53.8,84.8c0.9,0,1.8,0.2,2.6,0.7l0.5,0.3c2.4,1.4,3.2,4.5,1.8,7c-1.4,2.4-4.5,3.2-7,1.8l-0.6-0.4
+                        c-2.4-1.4-3.2-4.6-1.8-7C50.4,85.7,52.1,84.8,53.8,84.8z"/>
+                    <path class="st0" d="M73,93.2c0.5,0,1,0.1,1.5,0.2l0.7,0.2c2.7,0.8,4.2,3.7,3.4,6.4c-0.8,2.7-3.7,4.2-6.4,3.4l-0.6-0.2
+                        c-2.7-0.8-4.2-3.7-3.4-6.3C68.8,94.6,70.8,93.2,73,93.2z"/>
+                    <path class="st0" d="M93.5,97.3c0.2,0,0.3,0,0.5,0l0.7,0.1c2.8,0.2,4.9,2.7,4.6,5.5c-0.2,2.8-2.7,4.9-5.5,4.6l-0.7-0.1
+                        c-2.8-0.2-4.9-2.7-4.6-5.5C88.7,99.3,90.9,97.3,93.5,97.3z"/>
+                    <path class="st0" d="M22,22.2l-9.5,9.4c-2.2,1.8-5.3,1.6-7.2-0.5c-1.8-2-1.6-5.1,0.5-7L22,9.5l16.3,14.7c2,1.8,2.1,5,0.4,6.9
+                        c-1.9,2-5,2.3-7.2,0.5L22,22.2z"/>
+
+                </svg>
+            </ion-avatar>
+            <p>
+                <strong>Use the sidemenu to get the latest news and other informations</strong>
+            </p>
+
+        </ion-item>
+        <ion-item>
+            <p>
+                Find new and exciting locations. Please choose a category.
+            </p>
+        </ion-item>
+        <ion-item class="category" tappable *ngFor="let category of categories" (click)="onDetail($event, category)">
+            <ion-icon item-left><img [src]="getCategoryIcon(category.id)"/></ion-icon>
+            <h2 [innerHtml]="category.name"></h2>
+            <p [innerHtml]="category.description"></p>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

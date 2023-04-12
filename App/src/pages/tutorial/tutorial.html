@@ -1,0 +1,89 @@
+<ion-content class="tutorial-page">
+
+    <ion-slides #slider [options]="slideOptions">
+
+        <ion-slide >
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>
+                        Locations
+                    </ion-card-title>
+                    <ion-icon name="navigate"></ion-icon>
+                </ion-card-header>
+                <ion-card-content>
+                    ionWordpress allows you to search for the restaurants, banks, gas stations, book an hotel or find a movie schedule nearby.
+                </ion-card-content>
+                <ion-list>
+                    <ion-item>
+                        Full Wordpress Integration
+                    </ion-item>
+                    <ion-item>
+                        Manage Categories and Location directly in Wordpress
+                    </ion-item>
+
+                </ion-list>
+                <button ion-button color="primary" clear full (click)="onNext()">Next</button>
+            </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>
+                        Posts
+                    </ion-card-title>
+                    <ion-icon name="chatboxes"></ion-icon>
+                </ion-card-header>
+                <ion-card-content>
+                    View your Wordpress posts directly in this app
+                </ion-card-content>
+                <ion-list>
+                    <ion-item>
+                        Full Wordpress Integration
+                    </ion-item>
+                    <ion-item>
+                        Create and Edit your posts directly in Wordpress
+                    </ion-item>
+                    <ion-item>
+                        List View and Detail View
+                    </ion-item>
+                    <ion-item>
+                        Offline Caching
+                    </ion-item>
+                </ion-list>
+                <button ion-button color="primary" clear full (click)="onNext()">Next</button>
+            </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>
+                        Content
+                    </ion-card-title>
+                    <ion-icon name="information-circle"></ion-icon>
+                </ion-card-header>
+                <ion-card-content>
+                    View your Wordpress pages directly in this app
+                </ion-card-content>
+                <ion-list>
+                    <ion-item>
+                        Full Wordpress Integration
+                    </ion-item>
+                    <ion-item>
+                        Create and Edit your pages directly in Wordpress
+                    </ion-item>
+                    <ion-item>
+                        Internal Links
+                    </ion-item>
+                    <ion-item>
+                        Offline Caching
+                    </ion-item>
+                </ion-list>
+                <button color="primary" ion-button clear full (click)="onStart()">Start</button>
+            </ion-card>
+        </ion-slide>
+
+    </ion-slides>
+
+</ion-content>

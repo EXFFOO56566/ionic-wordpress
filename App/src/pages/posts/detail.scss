@@ -1,0 +1,18 @@
+.post-detail-page {
+    img {
+        width: auto;
+        height: auto;
+    }
+    h1,
+    h2 {
+        color: map-get($colors, primary);
+        font-weight: bold;
+    }
+    p {
+        margin-bottom: 15px;
+    }
+    img,
+    video {
+        max-width: 100%;
+    }
+}

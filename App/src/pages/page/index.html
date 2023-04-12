@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            <span [innerHTML]="page?.title?.rendered"></span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-card>
+        <ion-card-content>
+            <wordpress-content [content]="page?.content?.rendered" (link)="onInteralLink($event)"></wordpress-content>
+        </ion-card-content>
+
+        <ion-list class="page-links">
+            <button ion-item *ngFor="let page of pages" class="page-item" (click)="onDetail($event, page)">
+                <ion-thumbnail item-left [hidden]="page.thumbnail == null">
+                    <img [src]="page.thumbnail"/>
+                </ion-thumbnail>
+                <h2 [innerHtml]="page.title.rendered"></h2>
+                <p [innerHtml]="page.subtitle"></p>
+            </button>
+        </ion-list>
+    </ion-card>
+
+</ion-content>
